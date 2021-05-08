@@ -1,0 +1,233 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+        width: 13px;
+        height: 13px;
+        background: $darkBlue;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $veryLightGray;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $rainbow;
+        border-radius: 10px;
+        border: 2px solid $veryLightGray;
+
+
+        &:active {
+            background: hsl(136, 61%, 43%);
+        }
+    }
+
+    ::-webkit-scrollbar-corner {
+        display: none;
+    }
+
+    ::selection{
+        background: $limeGreen;
+    }
+
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    font-size: $font-md;
+    font-weight: 300;
+    font-size: 100%;
+    color: $grayishBlue;
+    line-height: 1.3;
+    overflow-x: hidden;
+
+    @include breakpoint-up(large) {
+        font-size: $font-lg;
+    }
+
+    // Para no permitir el scroll en el celular al abrir el menu.
+    &.noScroll {
+        overflow: hidden;
+    }
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0px;
+    font-weight: 400;
+    color: $darkBlue;
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: 2.5rem; // 37px
+    margin-bottom: 1.5rem;
+
+    @include breakpoint-up(large) {
+        font-size: $font-xl;
+    }
+}
+
+h2 {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+
+    // Para desktop
+    @include breakpoint-up(large) {
+        font-size: 2.25rem; //32px
+        margin-bottom: 2.25rem;
+    }
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
+    color: $grayishBlue;
+}
+
+// SPACING
+
+.container {
+    // 36px 24px
+    padding: 2.25rem .5rem;
+    max-width: 87.5rem; // 1400px
+    margin: 0 auto;
+
+    // Clases para agregar padding directemente con una etiqueta en el HTML
+
+    &--pall {
+        padding: 2.25rem 1.5rem;
+    }
+
+    &--py {
+        padding: 2.25rem 0;
+    }
+
+    &--px {
+        padding: 0 1.5rem;
+    }
+
+    &--pt {
+        padding-top: 2.25rem 0;
+    }
+
+    &--pb {
+        padding-bottom: 2.25rem 0;
+    }
+
+    &--pr {
+        padding-top: 1.5rem 0;
+
+    }
+
+    &--pl {
+        padding-top: 1.5rem 0;
+    }
+}
+
+
+// Links
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+// FLEXBOX CENTRADO
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-sa {
+        justify-content: space-around;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+// BUTTONS
+
+.button {
+    display: inline-block;
+    padding: .875rem 2.1875rem; //14px top 35px left
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    color: $white;
+    font-weight: 400;
+    transition: transform .3s ease-in-out;
+    font-size: $font-sm;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+// BTN TOTOP
+
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1rem;
+    z-index: 99;
+    border: none;
+    outline: none;
+    
+    background: $darkBlue;
+    color: $white;
+    cursor: pointer;
+    padding: 1.5rem;
+    border-radius: 100%;
+    font-size: 1rem;
+
+    @include breakpoint-up(large){
+        font-size: 2rem;
+        right: 2rem;
+    }
+}
+
+// VISIBILIDAD
+
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+.btnTop{
+    transition: all .3s ease-in-out;
+}
+

@@ -1,0 +1,97 @@
+.feature {
+
+    background-color: $lightGrayishBlue;
+    text-align: center;
+    box-shadow: $shadow;
+
+    
+
+
+    &__intro {
+        margin-bottom: 3.75rem; //60px
+        text-align: center;
+
+        @include breakpoint-up(large) {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .featureH2 {
+            position: relative;
+
+            &::before {
+                @include underline;
+                width: 85%;
+
+                @include breakpoint-up(medium) {
+                    width: 53%;
+                }
+
+                @include breakpoint-up(large) {
+                    width: 28%;
+                }
+            }
+        }
+
+        .featureP{
+            margin-top: 2rem;
+        }
+    }
+
+    &__grid {
+
+        // Tablets
+        @include breakpoint-up(medium) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 7rem;
+        }
+    }
+
+    &__item {
+        border: .5px solid $limeGreen;
+        background: $white;
+        margin: 2rem 1rem;
+        padding: 0 2.25rem;
+        border-radius: .5rem;
+        transition: transform .2s ease-in-out;
+        box-shadow: $shadow;
+
+        &:hover {
+            transform: scale(1.050);
+        }
+
+        // Para que en tablet ocupen 2 cards de 50% en cada fila
+        @include breakpoint-up(medium) {
+            flex: 1 0 40%; //Flex grow, flex-shrink y flex basis
+            margin: 1rem 1rem;
+        }
+
+        @include breakpoint-up(large) {
+            flex: 1;
+            margin: 0 1rem;
+        }
+    }
+
+    &__icon {
+        margin: 1.875rem;
+
+        @include breakpoint-up(large) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+
+        @include breakpoint-up(large) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__description {
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+}

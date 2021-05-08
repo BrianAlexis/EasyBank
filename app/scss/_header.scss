@@ -1,0 +1,110 @@
+.main-header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    padding: 1rem;
+    width: 100%;
+    background: white;
+    box-shadow: $shadow;
+    z-index: 999;
+
+    .content-wrapper{
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        @include breakpoint-up(mlarge){
+            padding: 0;
+        }
+
+        @include breakpoint-up(xlarge){
+            padding: 0 15rem 0rem 16rem;
+        }
+
+    }
+
+    .fas{
+        margin-left: auto;
+        color: $darkBlue;
+        font-size: 1.5rem;
+        cursor: pointer;
+        
+        @include breakpoint-up(large){
+            display: none;
+        }
+    }
+
+    img{
+        margin-top: .5rem;
+        height: 1.5rem;
+
+    }
+
+    .main-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and(max-width: 1024px){
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: $white;
+            z-index: 999;
+            transform: scale(0);
+            transition: transform .3s;
+        }
+
+        @include breakpoint-up(large){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+        }
+        
+        a{
+            text-align: center;
+            font-size: 1rem;
+            display: none;
+
+            @include breakpoint-up(large){
+                display:block;
+            }
+        }
+
+        &.active{
+            transform: initial;
+        }
+
+        .ulMenu{
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+
+            @include breakpoint-up(large){
+                display: flex;
+            }
+
+            a{
+                position: relative;
+                padding: 1rem 1rem;
+                color: $darkBlue;
+                text-decoration: none;
+                font-weight: 600;
+                transition: color .3s;
+
+                &:hover{
+                    color: $limeGreen;
+                }
+            }
+        }
+
+        .fa-times{
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+    }
+}

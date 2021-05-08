@@ -1,0 +1,14 @@
+@mixin square {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    height: 5px;
+    bottom: -13px;
+    width: 95%;
+    background: linear-gradient(to right, #31d35c, #2bb7da);
+    border-radius: 50px;
+}    
+    

@@ -1,0 +1,91 @@
+.hero{
+    padding-top: 0;
+    
+    @include breakpoint-up(large){
+        display: flex;
+        align-items: center;
+        padding-top: 4rem;
+    }
+
+    &.container{
+
+        @include breakpoint-up(mlarge){
+            padding: 4rem;
+        }
+
+        @include breakpoint-up(xlarge){
+            padding: 0;
+        }
+    }
+    
+    
+    &__image{
+        position: relative;
+        background-image: url(/images/svg/bg-intro-mobile.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 17.5rem;  //280px
+
+        @include breakpoint-up(large){
+            // El flex 3 demarca el espacio que va a ocupar, en este caso la imagen tiene 3 y el texto 2
+            flex: 3;
+            
+            // El order 1 es para que la imagen aparezca a la derecha, ya que por la cascada del html aparece a la izquierda.
+            order: 2;
+            height: 100%;
+            border-radius: 1rem 0 0 0;
+            
+            // Para que la imagen se vea completa, osea ocupe todo el ancho de la pantalla
+            min-height: 92vh;
+            background-image: url(/images/svg/bg-intro-desktop.svg);
+            background-position: left center;
+            margin-left: 7rem;
+        }
+
+
+        // Imagen de los 4 celulares
+        &::before{
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-image: url(/images/image-mockups.png);
+            background-size: 85%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+
+            @include breakpoint-up(medium){
+                background-size: 93%;
+            }
+        }
+    }
+
+    &__text{
+        text-align: center;
+
+        @include breakpoint-up(large){
+            flex: 2;
+            order: 1;
+            text-align: left;
+        }
+
+        p{
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .arrow{
+        @include arrowMobile;
+        margin-top: -3rem;
+
+        @include breakpoint-up(medium){
+            margin-top: -14rem
+        }
+
+        @include breakpoint-up(large) {
+            @include arrow;
+            margin-top: .5rem;
+        }
+    }
+}

@@ -1,0 +1,224 @@
+.users{
+    text-align: center;
+    background: $lightGrayishBlue;
+    box-shadow: $shadow;
+
+    .container{
+        
+        @include breakpoint-up(medium) {
+            padding: 2.25rem 10rem;
+        }
+    }
+
+    @include breakpoint-up(large){
+            margin: 10rem 0;
+    }
+    
+    .feature__wrap{
+
+        @include breakpoint-up(large){
+            margin-top: -5rem;
+            padding: 7rem 0 3rem 0 ;
+        }
+    }
+
+    &__path{
+        
+        padding: 0;
+
+        @include breakpoint-up(large){
+            margin-top: -10rem;
+        }
+    }
+    
+    &__title{
+        position: relative;
+        margin-top: 5rem;
+
+        @include breakpoint-up(large){
+            margin-top: 1rem;
+        }
+
+        &::before{
+            @include underline;
+            width: 70%;
+            
+            @include breakpoint-up(mlarge) {
+                width: 30%;
+            }
+            
+            @include breakpoint-up(xlarge){
+                width: 18%;
+            }
+            
+        }
+    }
+
+
+    .swiper-container {
+        width: 100%;
+        height: 40rem;
+        margin: 5rem auto 0rem auto;
+        border-radius: 1rem;
+
+        @include breakpoint-up(large){
+            margin: 6rem 0;
+            padding: 2rem 0;
+        }
+    
+        .swiper-slide {
+            background: $lightGrayishBlue;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            border-radius: 1rem;
+            background: $darkBlue;
+            
+            @include breakpoint-up(large){
+                
+            }
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev{
+            color: $rainbowAlt;
+
+            @include breakpoint-up(large){
+                padding: 3rem;
+            }
+        }
+
+        .swiper-pagination{
+
+            @include breakpoint-up(large){
+                // margin-bottom: -3rem;
+            }
+            
+            span{
+                background: $limeGreen;
+                
+                @include breakpoint-up(large){
+                    background: $darkBlue;
+                }
+            }
+        }
+    }
+
+    &__item{
+        position: relative;
+        width: 15rem;
+        height: 23rem;
+        border: .5px solid $limeGreen;
+        background: $white;
+        margin: 2rem 1rem;
+        border-radius: 2rem;
+
+        -webkit-box-shadow: 10px 10px 18px -16px rgba(0, 0, 0, 0.64);
+        -moz-box-shadow: 10px 10px 18px -16px rgba(0, 0, 0, 0.64);
+        box-shadow: 10px 10px 18px -16px rgba(0, 0, 0, 0.64);
+
+        @include breakpoint-up(large) {
+            width: 25rem;
+            height: 27rem;
+        }
+
+        #quoteR{
+            position: absolute;
+            top: 2rem;
+            left: 1rem;
+            font-size: 2rem;
+            color: $lightGrayishBlue;
+
+            @include breakpoint-up(large) {
+                left: 1rem;
+                font-size: 2rem;
+            }
+        }
+
+        #quoteL{
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: $lightGrayishBlue;
+
+            @include breakpoint-up(large) {
+                right: 2rem;
+                font-size: 2rem;
+            }
+        }
+        
+    }
+
+    &__image{
+        margin-top: -2rem;
+        
+        img{
+            width: 30%;
+        }
+    }
+
+    &__stars{
+        margin-top: .5rem;
+        color: $brightCyan;
+        font-size: 1rem;
+    }
+    
+    &__name {
+        margin-top: 1rem;
+        position: relative;
+
+        &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 6rem;
+            height: .3rem;
+            background: $rainbowR;
+            top: 1.8rem;
+            left: 4.5rem;
+            border-radius: 1rem;
+
+            @include breakpoint-up(large) {
+                left: 9.4rem;
+                transform: translate(-50% -50%);
+            }
+        }
+
+        @include breakpoint-up(large){
+        
+        }
+    }
+
+    &__location{
+
+        p{
+            font-size: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            color: $limeGreen;
+        }
+        
+    }
+
+    &__description {
+
+        p{
+            font-size: 1rem;
+            margin: 1rem;
+
+            @include breakpoint-up(large){
+                font-size: 1.3rem;
+                
+            }
+        }
+
+        @include breakpoint-up(large){
+            
+            
+        }
+    }
+
+}

@@ -1,0 +1,213 @@
+.footer__wave{
+        
+    @include breakpoint-up(large){
+        margin-bottom: -4rem;
+    }
+}
+
+.footer {
+
+    background-color: $darkBlue;
+    color: $white;
+    padding: 2.5rem; //40px
+    text-align: center;
+    position: relative;
+
+    
+
+    .container {
+        @include breakpoint-up(large) {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 3fr;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+                "logo links1 links2 cta"
+                "social links1 links2 copy";
+            justify-items: start;
+        }
+    }
+
+
+    // About us, contact, etc...
+    a {
+        color: $white;
+        transition: color .2s ease-in-out;
+
+        &:hover{
+            color: $limeGreen;
+        }
+    }
+
+    &__logo {
+        display: inline-block; // Uso  inline block para que el svg me deje ponerle margin padding, etc-
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem; //30px
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: logo;
+        }
+    }
+
+    &__social {
+
+        h4 {
+            margin-bottom: 1rem;
+            font-size: .8rem;
+
+        }
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem; //30px
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: social;
+        }
+
+        a {
+            display: inline-block;
+            height: 1.25rem;
+            
+
+            svg path{
+                transition: fill .2s ease-in-out;
+            }
+
+            &:hover svg path{
+                fill: $limeGreen;
+            }
+        }
+
+        a:not(:last-child) {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 2.5;
+        font-size: 0.9375rem; //15px
+
+        @include breakpoint-up(large) {
+            // Para que en desktop los link empiezen a la izquierda, y no esten centrados
+            align-items: start;
+            justify-content: space-between;
+        }
+
+        &.col1 {
+            @include breakpoint-up(large) {
+                grid-area: links1;
+            }
+        }
+
+        &.col2 {
+
+            @include breakpoint-down(medium) {
+                margin-bottom: 1.875rem; //30px
+            }
+
+            @include breakpoint-up(large) {
+                grid-area: links2;
+            }
+        }
+
+        a {
+            @include breakpoint-down(medium) {
+                line-height: 2.25;
+            }
+        }
+
+    }
+
+    &__cta {
+
+        @include breakpoint-up(large) {
+            grid-area: cta;
+            text-align: right;
+            justify-self: end;
+        }
+
+        .button {
+            color: $white;
+            transition: transform .3s ease-in-out;
+
+            &:hover{
+                color: $white;
+            }
+
+            @include breakpoint-down(medium) {
+                margin-bottom: 1.875rem; //30px
+            }
+        }
+    }
+
+    &__copy {
+        font-size: 0.9375rem; //15px
+        color: $grayishBlue;
+
+        @include breakpoint-up(large) {
+            grid-area: copy;
+            align-self: end;
+            justify-self: end;
+        }
+    }
+
+    .attribution{
+        background-color: $limeGreen;
+        padding: 1rem;
+        border-radius: 2rem;
+
+        @include breakpoint-up(large){
+            width: 50%;
+            margin: 0 auto;
+        }
+        
+        h4{
+            font-size: .8rem;
+            color: $white;
+
+            @include breakpoint-up(large){
+                font-size: 1rem;
+                font-weight: 500;
+            }
+        }
+
+        p{
+            margin-bottom: 1rem;
+            color: $darkBlue;
+            font-size: 1rem;
+            font-weight: 500;
+
+            @include breakpoint-up(large){
+                font-size: 1.5rem;
+            }
+        }
+
+        a{
+            padding: 1rem;
+        
+            @include breakpoint-up(large){
+                height: 1rem;
+            }
+
+            svg{
+                transform: scale(1.2);
+            }
+
+            svg path{
+                transition: fill .2s ease-in-out;
+            }
+
+            &:hover svg path{
+                fill: $darkBlue;
+            }
+        }  
+        
+    }
+
+}

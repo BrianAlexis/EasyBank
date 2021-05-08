@@ -1,0 +1,210 @@
+.faq{
+    background: $rainbowR;
+
+    @include breakpoint-up(large){
+        padding: 6rem;
+        margin-top: -10rem;
+        margin-bottom: 2rem;
+    }
+
+    .container{
+        margin-top: 5rem;
+    }
+
+    .card {
+        // Position relative para poder posicionar el svg de la caja naranja con su display absolute
+        position: relative;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        background: $lightGrayishBlue;
+        border-radius: 2rem;
+        max-width: 100%;
+        margin: 10rem 1rem 4rem;
+    
+        background-image: url("/images/svg/bg-pattern-mobile.svg");
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center 4%;
+    
+        @include breakpoint-up(large) {
+            flex-direction: row;
+            margin: 6rem auto;
+            padding-right: 2rem;
+    
+            background-image: url("/images/svg/bg-pattern-desktop.svg");
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: -13% center;
+        }
+    
+        &__image {
+            display: flex;
+            align-items: center;
+            
+    
+            @include breakpoint-up(large) {
+                flex: 1;
+                margin-left: 8rem;
+            }
+    
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 15rem;
+                transform: translateY(-50%) translateX(-30%);
+    
+                @include breakpoint-up(large) {
+                    max-width: 25rem;
+                    transform: translateX(-3rem);
+                }
+            }
+    
+        }
+    
+        &__text {
+            text-align: left;
+            margin: 4rem 1rem;
+            margin-top: 0;
+            font-size: 1rem;
+            
+    
+            @include breakpoint-up(large) {
+                flex: 1;
+                margin: 3rem 2rem 4rem 0;
+                font-size: 3rem;
+            }
+    
+            h1{
+                position: relative;
+                text-align: center;
+                margin-bottom: 3rem;
+                color: $darkBlue;
+    
+                &::before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    right: 0;
+                    bottom: -1rem;
+                    width: 100%;
+                    height: .3rem;
+                    background: $darkBlue;
+                    border-radius: 1rem;
+                }
+            }
+        }
+    
+    }
+    
+    .acordion{
+    
+        &__item{
+            padding: .8rem;
+            border-bottom: 1px solid $darkBlue;
+            border-radius: 1px;
+        }
+    
+        &__question{ //button
+            // El display flex es para alinear el boton con el after
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            width: 100%;
+            color: $darkBlue;
+            padding: 1rem 0;
+            font-size: 1.2rem;
+            text-align: left;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: $darkBlue;
+    
+            transition: color .2s ease-in-out;
+    
+            &:hover{
+                color: $limeGreen;
+            }
+    
+            &::after{
+                content: "";
+                display: block;
+                width: 1rem;
+                height: 1rem; 
+                padding: .5rem;
+                background-image: url("/images/svg/icon-arrow-down.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                transition: transform .3s ease-in-out;
+            }
+
+            h4{
+                font-size: 1rem;
+                line-height: 1.5rem;
+                padding-right: 1rem;
+                @include breakpoint-up(large) {
+                
+                }
+            }
+        }
+    
+        // --------- ACORDEONES -------------
+        
+        &__question.open{
+            font-weight: bold;
+    
+            &::after{
+                transform: rotate(180deg);
+            }
+        }
+    
+        &__colapse {
+            transition: height .3s ease-in-out;
+        }
+    
+        &__colapse.colapse {
+            display: none;
+        }
+    
+        &__colapse.colapsing {
+            height: 0;
+            overflow: hidden;
+        }
+    
+        &__colapse.open{
+            // Sin este display al hacer click en el button no va a aparecer nuestro contenido
+            display: block;
+            // margin-bottom: 1rem;
+        }
+        &__content{
+
+            @include breakpoint-up(large){
+                font-size: 1.1rem;
+                line-height: 1.5rem;
+            }
+
+            p{
+                color: $darkBlue;
+                font-size: 1rem;
+
+                @include breakpoint-up(large){
+                }
+            }
+
+            &.hidden{
+                display: none;
+            }
+        }
+    
+    
+    }
+    
+}
+

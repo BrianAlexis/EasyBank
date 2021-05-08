@@ -1,0 +1,31 @@
+// Colors
+
+// Primarios
+
+$darkBlue: hsl(233, 26%, 24%);
+$limeGreen: hsl(136, 65%, 51%);
+$brightCyan: hsl(192, 70%, 51%);
+$rainbow: linear-gradient(to bottom, $limeGreen, $brightCyan);
+$rainbowR: linear-gradient(to right, $limeGreen, $brightCyan);
+$rainbowAlt: #31d35c;
+
+// Neutrales
+
+$grayishBlue: hsl(233, 8%, 62%);
+$lightGrayishBlue: hsl(220, 16%, 96%);
+$veryLightGray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+// FONT SIZES
+
+$font-sm: .875rem; // 14px
+$font-md: 1.125rem; // 18px
+$font-lg: 1.10rem; // 17px
+$font-xl: 3.25rem; // 52px
+
+// SHADOWS
+
+$shadow: 10px 10px 18px -16px rgba(0, 0, 0, 0.50);
+
+
+// FAQ

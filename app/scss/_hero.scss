@@ -21,7 +21,7 @@
     
     &__image{
         position: relative;
-        background-image: url("images/svg/bg-intro-mobile.svg");
+        background-image: url(images/svg/bg-intro-mobile.svg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
@@ -38,7 +38,7 @@
             
             // Para que la imagen se vea completa, osea ocupe todo el ancho de la pantalla
             min-height: 92vh;
-            background-image: url("images/svg/bg-intro-desktop.svg");
+            background-image: url(images/svg/bg-intro-desktop.svg);
             background-position: left center;
             margin-left: 7rem;
         }
@@ -50,7 +50,7 @@
             height: 100%;
             width: 100%;
             position: absolute;
-            background-image: url("images/image-mockups.png");
+            background-image: url(images/image-mockups.png);
             background-size: 85%;
             background-repeat: no-repeat;
             background-position: center bottom;
